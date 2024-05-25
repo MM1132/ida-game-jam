@@ -20,8 +20,8 @@ public class BackgroundCameraLock : MonoBehaviour
         _camera =FindFirstObjectByType <Camera>();
         sptder = GetComponent<SpriteRenderer>();
         spriteWidth = sptder.sprite.bounds.size.x;
+    }
 
-;    }
     void Update()
     {
         _camOthSize =_camera.orthographicSize * Screen.width/Screen.height;
