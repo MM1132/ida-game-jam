@@ -10,5 +10,13 @@ namespace IdaGameJam.Core
         [Header("Enemy Type")]
         [SerializeField]EnemySO _enemySO;
         [SerializeField]Incapacitate _incapacitate;
+
+        public void CauseChao(bool hit, GameObject obj)
+        {
+            if (hit && obj.TryGetComponent(out Incapacitate d))
+            {
+                Debug.Log($"Take damage {d.gameObject.name}");
+            }
+        }
     }
 }
