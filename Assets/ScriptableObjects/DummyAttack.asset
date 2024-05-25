@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d749f2d352d1f49c18d458c57e516962, type: 3}
   m_Name: DummyAttack
   m_EditorClassIdentifier: 
-  _damageValue: 0
+  _damageValue: 5
   timeBetweenAttacks: 0

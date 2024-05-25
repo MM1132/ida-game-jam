@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2735a0dad374302b839db185b9f997, type: 3}
   m_Name: Dummy
   m_EditorClassIdentifier: 
-  _enemyType: 0
-  _scoreValue: 0
+  _enemyType: 1
+  _scoreValue: 10
   _perfab: {fileID: 0}

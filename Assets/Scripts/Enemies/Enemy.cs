@@ -16,7 +16,10 @@ namespace IdaGameJam.Core
             if (hit && obj.TryGetComponent(out Incapacitate d))
             {
                 Debug.Log($"Take damage {d.gameObject.name}");
+                _incapacitate = d;
+                _incapacitate.TakeDamage(9);
             }
+            _incapacitate = null;
         }
     }
 }

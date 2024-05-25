@@ -37,6 +37,7 @@ public class Movement : MonoBehaviour
     void OnDisable()
     {
         _controller.MoveEvent -= MoveInput;
+        _controller.JumpEvent -= Jump;
     }
 
     void Jump()
