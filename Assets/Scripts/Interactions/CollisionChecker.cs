@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CollisionChecker : MonoBehaviour
-{
-    [SerializeField]BoxCollider2D _boxCollider;
-
-    void Start()
+{ 
+    public void OnColliderEnter(bool hit, GameObject obj)
     {
-        _boxCollider = GetComponent<BoxCollider2D>();
-    }
-
-    void OnTriggerEnter()
-    {
-        
+        if(hit)
+        {
+            Debug.Log(obj.name);
+        }else
+        {
+            Debug.Log("Nothing Hit");
+        }
     }
 }

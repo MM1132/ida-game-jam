@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     [SerializeField]float speed,jumpforce;
     [SerializeField]Vector3 jump;
     public Vector2 _moveValue;
-    public bool isMoving;
+    public bool isAirbone;
 
     void OnEnable()
     {
@@ -38,7 +38,23 @@ public class Movement : MonoBehaviour
 
     void Jump()
     {
+        if(isAirbone)return;
         _rigidbody.AddForce(jump*jumpforce,ForceMode2D.Impulse);
-        isMoving = !isMoving;
+    }
+    
+    /// <summary>
+    /// Checks if the player is airbone and adjust accordingly
+    /// </summary>
+    /// <param name="hit"></param>
+    /// <param name="obj"></param>
+    public void OnColliderEnter(bool hit, GameObject obj)
+    {
+        if(hit)
+        {
+            isAirbone = false;
+        }else
+        {
+           isAirbone = true;
+        }
     }
 }

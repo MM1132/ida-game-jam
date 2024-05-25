@@ -13,15 +13,21 @@ public class BoolEvent : UnityEvent<bool,GameObject>{}
 public class ZoneTrigger : MonoBehaviour
 {
     [SerializeField]BoolEvent _enterZone = default;
-    /*
-    void OnTriggerEnter(Collider2D other)
+    [SerializeField]LayerMask _layers = default;
+    
+    void OnTriggerEnter2D(Collider2D other)
     {
-        _enterZone.Invoke(true, other.gameObject);
+        if((1 << other.gameObject.layer & _layers) != 0)
+        {
+            _enterZone.Invoke(true, other.gameObject);
+        }
     }
 
-    void OnTriggerExit(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
-        _enterZone.Invoke(false, other.gameObject);
+        if((1 << other.gameObject.layer & _layers) != 0)
+        {
+            _enterZone.Invoke(false, other.gameObject);
+        }
     }
-    */
 }
