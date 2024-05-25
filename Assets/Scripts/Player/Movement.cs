@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     SpriteRenderer spr=> GetComponent<SpriteRenderer>();
     public Vector2 _moveValue;
     public bool isAirbone;
+    public bool isMoving;
     bool invertValue,lastValue;
 
     void OnEnable()
@@ -33,6 +34,7 @@ public class Movement : MonoBehaviour
 
     void MoveInput(Vector2 x)
     {
+        isMoving = (x.x !=0)? true: false;
         _moveValue = new Vector2(x.x,0);
 
         //control the sprite
