@@ -19,4 +19,6 @@ public class CameraFollow : MonoBehaviour
         Vector3 tragetPos = _playerTranform.position + offsetPos;
         transform.position = Vector3.Lerp(transform.position,tragetPos,cameraSmothing *Time.deltaTime);
     }
+
+    //should clamp the camera to the background 
 }

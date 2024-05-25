@@ -18,6 +18,12 @@ namespace IdaGameJam.Core
                 Debug.Log($"Take damage {d.gameObject.name}");
                 _incapacitate = d;
                 _incapacitate.TakeDamage(9);
+                
+                obj.TryGetComponent(out Movement x );
+                if(x.isAirbone== true)
+                {
+                    x.isAirbone = false;
+                }
             }
             _incapacitate = null;
         }

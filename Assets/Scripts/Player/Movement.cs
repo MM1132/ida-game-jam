@@ -11,8 +11,10 @@ public class Movement : MonoBehaviour
     [SerializeField]Rigidbody2D _rigidbody => GetComponent<Rigidbody2D>();
     [SerializeField]float speed,jumpforce;
     [SerializeField]Vector3 jump;
+    SpriteRenderer spr=> GetComponent<SpriteRenderer>();
     public Vector2 _moveValue;
     public bool isAirbone;
+    bool invertValue,lastValue;
 
     void OnEnable()
     {
@@ -23,7 +25,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         //lock the rotation
-        _rect.transform.localRotation = Quaternion.Euler(new Vector3());
+        //_rect.transform.localRotation = Quaternion.Euler(new Vector3());
         //increase the speed
         var i = _moveValue.normalized * speed * Time.unscaledDeltaTime;
         _rect.transform.localPosition += new Vector3(i.x,i.y,0);
@@ -32,6 +34,13 @@ public class Movement : MonoBehaviour
     void MoveInput(Vector2 x)
     {
         _moveValue = new Vector2(x.x,0);
+
+        //control the sprite
+        invertValue = (x.x == 1)? false: true;
+        var temp = invertValue;
+        invertValue = lastValue;
+        lastValue = temp; 
+        spr.flipX = invertValue;
     }
 
     void OnDisable()
