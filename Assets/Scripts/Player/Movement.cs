@@ -22,6 +22,9 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        //lock the rotation
+        _rect.transform.localRotation = Quaternion.Euler(new Vector3());
+        //increase the speed
         var i = _moveValue.normalized * speed * Time.unscaledDeltaTime;
         _rect.transform.localPosition += new Vector3(i.x,i.y,0);
     }
