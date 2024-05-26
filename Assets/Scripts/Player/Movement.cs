@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour
     public bool isAirbone;
     public bool isMoving;
     bool invertValue,lastValue;
+    float jumpcount;
 
     void OnEnable()
     {
@@ -64,12 +65,10 @@ public class Movement : MonoBehaviour
     /// <param name="obj"></param>
     public void OnColliderEnter(bool hit, GameObject obj)
     {
-        if(hit)
+        /*if(obj.tag == "Floor")
         {
-            isAirbone = false;
-        }else
-        {
-           isAirbone = true;
-        }
+            //isAirbone = !hit;
+            Debug.Log($"fired");
+        }*/
     }
 }

@@ -453,7 +453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &338923563
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338923562}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff4ef4d68bb5e4fa0b602f37c69e64fd, type: 3}
   m_Name: 
@@ -654,6 +654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 345056116}
   - component: {fileID: 345056118}
+  - component: {fileID: 345056119}
   m_Layer: 9
   m_Name: Grass2
   m_TagString: Untagged
@@ -734,6 +735,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &345056119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345056115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44293c02563bd40c189da56552dac8a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 5
+  InvertScale: 0
+  HasALeftBG: 0
+  HasARightBG: 0
+  counter: 0
 --- !u!1 &404043608
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,6 +852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 581878655}
   - component: {fileID: 581878657}
+  - component: {fileID: 581878658}
   m_Layer: 9
   m_Name: CarRoad
   m_TagString: Untagged
@@ -914,6 +933,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &581878658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581878654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44293c02563bd40c189da56552dac8a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 5
+  InvertScale: 0
+  HasALeftBG: 0
+  HasARightBG: 0
+  counter: 0
 --- !u!1 &650701593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,8 +1159,8 @@ GameObject:
   - component: {fileID: 782698718}
   - component: {fileID: 782698719}
   m_Layer: 7
-  m_Name: Dectector
-  m_TagString: Untagged
+  m_Name: GoundDectector
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1475,7 +1511,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -2.02}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1485,7 +1521,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.63, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &882777099
 GameObject:
@@ -1980,6 +2016,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1303576255}
+  - component: {fileID: 1303576256}
   m_Layer: 0
   m_Name: Trees
   m_TagString: Untagged
@@ -2005,6 +2042,22 @@ Transform:
   - {fileID: 843841623}
   m_Father: {fileID: 882777100}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1303576256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303576254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2811e2593d954cb892ae040ca2a619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints: []
+  rectPost: {x: 0, y: 2.66, z: 0}
+  xSpawnPoint: 0
+  dummyObject: {fileID: 0}
 --- !u!1 &1307713533
 GameObject:
   m_ObjectHideFlags: 0
