@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BackgroundCameraLock : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class BackgroundCameraLock : MonoBehaviour
     [SerializeField]bool InvertScale;
     public bool HasALeftBG,HasARightBG;
     [SerializeField]float counter;
+    public int BackgroundCount = 0;
 
 
     void Awake()
@@ -69,6 +71,12 @@ public class BackgroundCameraLock : MonoBehaviour
         }else
         {
             newBg.GetComponent<BackgroundCameraLock>().HasARightBG = true;
+        }
+        BackgroundCount++;
+
+        if (BackgroundCount >= 2) {
+            Debug.Log("You win! ");
+            SceneManager.LoadScene("Victory Screen");
         }
         //CrowdControl();
     }
