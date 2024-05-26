@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BackgroundCameraLock : MonoBehaviour
@@ -12,7 +13,8 @@ public class BackgroundCameraLock : MonoBehaviour
     SpriteRenderer sptder;
     Vector3 _cam;
     [SerializeField]bool InvertScale;
-    [HideInInspector]public bool HasALeftBG,HasARightBG;
+    public bool HasALeftBG,HasARightBG;
+    [SerializeField]float counter;
 
 
     void Awake()
@@ -20,6 +22,9 @@ public class BackgroundCameraLock : MonoBehaviour
         _camera =FindFirstObjectByType <Camera>();
         sptder = GetComponent<SpriteRenderer>();
         spriteWidth = sptder.sprite.bounds.size.x;
+    }
+    void Start()
+    {
     }
 
     void Update()
@@ -65,5 +70,27 @@ public class BackgroundCameraLock : MonoBehaviour
         {
             newBg.GetComponent<BackgroundCameraLock>().HasARightBG = true;
         }
+        //CrowdControl();
+    }
+    void CrowdControl()
+    {
+        //crowd control
+        var x = FindObjectsByType(typeof(BackgroundCameraLock),FindObjectsSortMode.None);
+        
+        for(int i = 0;i < x.Length; i++)
+        {
+            SpriteRenderer spt = x[i].GetComponent<SpriteRenderer>();
+            bool left = x[i].GetComponent<BackgroundCameraLock>().HasALeftBG;
+            bool right = x[i].GetComponent<BackgroundCameraLock>().HasARightBG;
+            if(!spt.isVisible && left && right)
+            {
+                Debug.Log(x[i].name);
+            }
+        }
+    }
+
+    void OnDestory()
+    {
+        Debug.Log("I was killed off");
     }
 }
