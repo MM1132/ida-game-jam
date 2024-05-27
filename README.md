@@ -4,3 +4,5 @@
 **Your mission:** Make it home safely with your bag of groceries.*
 
 ![Game preview](2.gameplaymockup.png)
+
+> The game was created on the IDA Game Jam in [Kood/Jõhvi](https://kood.tech/en/)
